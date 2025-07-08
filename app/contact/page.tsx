@@ -1,24 +1,23 @@
-import { createMetadata } from '@/lib/seo/metadata';
-import { ContactForm } from './contact-form';
+import { createMetadata } from "@/lib/seo/metadata";
 
 export const metadata = createMetadata({
-  title: 'Contact',
-  description: 'Get in touch with us for any questions about our Next.js SSR template',
-  keywords: ['Contact', 'Next.js', 'SSR', 'Support', 'Help'],
+  title: "Contact Us",
+  description: "Get in touch with the SkillBridge team",
+  keywords: ["Contact", "SkillBridge", "Support", "Get Started"],
 });
 
 export default function ContactPage() {
   return (
-    <div className="isolate bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact us</h2>
-          <p className="mt-2 text-lg leading-8 text-gray-600">
-            Have questions about our Next.js SSR template? We're here to help.
+    <div className="min-h-screen bg-[#000814] text-white">
+      <div className="container mx-auto px-4 py-16">
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
+          <p className="text-xl text-gray-300 mb-8">
+            Ready to start your journey? Get in touch with our team to learn more about SkillBridge.
           </p>
-        </div>
-        <div className="mx-auto mt-16 max-w-xl">
-          <ContactForm />
+          <div className="text-gray-400">
+            Contact form and details coming soon.
+          </div>
         </div>
       </div>
     </div>
