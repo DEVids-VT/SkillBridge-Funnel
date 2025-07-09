@@ -40,7 +40,7 @@ export default function StudentBenefitsSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-6">
-            {(t('students.benefits', { returnObjects: true }) as any[]).slice(0, 3).map((benefit, index) => {
+            {(t('students.benefits', { returnObjects: true }) as Array<{title: string; description: string; icon: string}>).slice(0, 3).map((benefit, index) => {
               const IconComponent = iconMap[benefit.icon as keyof typeof iconMap];
               return (
                 <div key={index} className={`${cards.glass} p-6 ${animations.hover.lift}`}>
@@ -73,7 +73,7 @@ export default function StudentBenefitsSection() {
         </div>
 
         <div className={layouts.grid.cards3}>
-          {(t('students.benefits', { returnObjects: true }) as any[]).slice(3).map((benefit, index) => {
+          {(t('students.benefits', { returnObjects: true }) as Array<{title: string; description: string; icon: string}>).slice(3).map((benefit, index) => {
             const IconComponent = iconMap[benefit.icon as keyof typeof iconMap];
             return (
               <div key={index + 3} className={`${cards.feature} ${animations.hover.scale}`}>

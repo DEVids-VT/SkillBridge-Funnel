@@ -46,7 +46,7 @@ export function Header() {
             <span className="relative z-10 tracking-wider">{ready ? t('headerComponent.betaBanner.beta') : 'BETA'}</span>
           </span>
           <span>
-            {ready ? t('headerComponent.betaBanner.message') : '- Try now completely free!'}
+            {ready ? t('headerComponent.betaBanner.message') : '- Get Early Access!'}
           </span>
         </div>
       </div>

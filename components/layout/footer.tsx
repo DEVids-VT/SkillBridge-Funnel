@@ -3,15 +3,9 @@
 import { useTranslation } from 'react-i18next';
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useState, useEffect } from 'react';
 
 export function Footer() {
   const { t, ready } = useTranslation('layout');
-  const [isClient, setIsClient] = useState(false);
-  
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   const currentYear = new Date().getFullYear();
 

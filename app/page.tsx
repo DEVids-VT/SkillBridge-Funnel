@@ -1,7 +1,7 @@
-import LandingPage from './landing/page';
+import PreorderPage from './preorder/page';
 
 export default function HomePage() {
-  return <LandingPage />;
+  return <PreorderPage />;
 }
 
 

@@ -1,13 +1,14 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { spacing, typography, layouts, cards, components, animations, media } from '@/lib/design-system';
+import { VideoPlayer } from '@/components/ui/VideoPlayer';
+import { spacing, typography, layouts, cards, components, animations, media, effects } from '@/lib/design-system';
 
 export default function ProblemSection() {
   const { t } = useTranslation('landing');
 
   return (
-    <section className={`relative ${spacing.section} bg-[#001d3d]`}>
+    <section className={`relative ${spacing.section} ${effects.gradients.radial3d}`}>
       <div className={spacing.container}>
         <div className={layouts.sectionHeader}>
           <div className={`${components.badge} ${components.badgeColors.glass} mb-6`}>
@@ -38,20 +39,19 @@ export default function ProblemSection() {
                 }}
               />
               <div className="relative z-10 w-full h-full">
-                <div className={`${cards.base} ${media.video.player}`}>
-                  <img 
-                    src="/images/aigen/Lucid_Realism_A_highresolution_photorealistic_scene_depicting__0.jpg"
-                    alt="Traditional Hiring Problems Illustration"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <VideoPlayer 
+                  src="/videos/traditional-hiring-broken.mp4"
+                  className={media.video.player}
+                  loop={true}
+                  muted={false}
+                />
               </div>
             </div>
           </div>
         </div>
 
         <div className={layouts.grid.cards2}>
-          {(t('problem.points', { returnObjects: true }) as any[]).map((point, index) => (
+          {(t('problem.points', { returnObjects: true }) as Array<{title: string; description: string}>).map((point, index) => (
             <div key={index} className={`${cards.feature} ${animations.hover.lift}`}>
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-[#ffd60a] rounded-lg flex items-center justify-center flex-shrink-0">

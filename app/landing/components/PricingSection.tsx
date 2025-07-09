@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { spacing, typography, layouts, cards, components, animations, buttons } from '@/lib/design-system';
+import { spacing, typography, layouts, cards, components, animations, buttons, effects } from '@/lib/design-system';
 import { Award, Star, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -9,7 +9,7 @@ export default function PricingSection() {
   const { t } = useTranslation('landing');
 
   return (
-    <section className={`relative ${spacing.section} bg-[#001d3d]`}>
+    <section className={`relative ${spacing.section} ${effects.gradients.radial3d}`}>
       <div className={spacing.container}>
         <div className={layouts.sectionHeader}>
           <div className={`${components.badge} ${components.badgeColors.glass} mb-6`}>
@@ -21,7 +21,7 @@ export default function PricingSection() {
         </div>
 
         <div className={layouts.grid.cards3}>
-          {(t('pricing.plans', { returnObjects: true }) as any[]).map((plan, index) => (
+          {(t('pricing.plans', { returnObjects: true }) as Array<{name: string; price: string; period: string; features: string[]; popular?: boolean; description: string; cta: string}>).map((plan, index) => (
             <div key={index} className={`${cards.pricing} ${plan.popular ? 'border-[#ffd60a] scale-105' : ''} ${animations.hover.glow}`}>
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">

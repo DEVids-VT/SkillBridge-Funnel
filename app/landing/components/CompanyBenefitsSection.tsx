@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { spacing, typography, layouts, cards, components, animations } from '@/lib/design-system';
+import { spacing, typography, layouts, cards, components, animations, effects } from '@/lib/design-system';
 import { 
   Clock, Target, TrendingUp, Users, Code, LineChart, Briefcase, GraduationCap, 
   MessageCircle, Network, Trophy, BookOpen, Star
@@ -26,7 +26,7 @@ export default function CompanyBenefitsSection() {
   };
 
   return (
-    <section className={`relative ${spacing.section} bg-[#001d3d]`}>
+    <section className={`relative ${spacing.section} ${effects.gradients.radial3d}`}>
       <div className={spacing.container}>
         <div className={layouts.sectionHeader}>
           <div className={`${components.badge} ${components.badgeColors.blue} mb-6`}>
@@ -38,7 +38,7 @@ export default function CompanyBenefitsSection() {
         </div>
 
         <div className={layouts.grid.cards3}>
-          {(t('companies.benefits', { returnObjects: true }) as any[]).map((benefit, index) => {
+          {(t('companies.benefits', { returnObjects: true }) as Array<{title: string; description: string; icon: string}>).map((benefit, index) => {
             const IconComponent = iconMap[benefit.icon as keyof typeof iconMap];
             return (
               <div key={index} className={`${cards.feature} ${animations.hover.scale}`}>

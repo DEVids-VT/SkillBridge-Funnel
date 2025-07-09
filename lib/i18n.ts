@@ -6,6 +6,81 @@ import { initReactI18next } from 'react-i18next';
 // Embedded translations to avoid hydration issues
 const resources = {
   en: {
+    preorder: {
+      hero: {
+        badge: "Coming Soon - Get Early Access",
+        title: {
+          part1: "The Future of",
+          part2: "Hiring"
+        },
+        subtitle: "SkillBridge is revolutionizing how companies find talent and how developers showcase their skills. Be among the first to experience the platform that will change hiring forever.",
+        form: {
+          placeholder: "Enter your email for early access",
+          button: "Get Notified",
+          success: "Thank you! We'll notify you when we launch."
+        },
+        socialProof: "🚀 Join 10,000+ professionals waiting for launch • No spam, just launch updates"
+      },
+      howItWorks: {
+        badge: "How It Works",
+        title: "Simple Process, Revolutionary Results",
+        subtitle: "Our platform streamlines the hiring process through practical, real-world assessments",
+        steps: [
+          {
+            title: "Company Posts Project",
+            description: "Companies create real-world challenges tailored to their needs and tech stack"
+          },
+          {
+            title: "Developers Code",
+            description: "Talented developers work on practical projects that showcase their skills"
+          },
+          {
+            title: "AI Assessment",
+            description: "Our AI evaluates code quality, problem-solving approach, and technical skills"
+          },
+          {
+            title: "Detailed Feedback",
+            description: "Both parties receive comprehensive insights and performance analytics"
+          },
+          {
+            title: "Perfect Match",
+            description: "Companies connect with developers who have proven their skills on real projects"
+          }
+        ]
+      },
+      finalCTA: {
+        badge: "Launching Soon - Don't Miss Out!",
+        title: "Join the Future of Hiring",
+        subtitle: "Be among the first to experience SkillBridge when we launch. Get exclusive early access and special launch benefits.",
+        form: {
+          placeholder: "Enter your email to get notified",
+          button: "Get Early Access",
+          success: {
+            title: "Welcome to the future!",
+            subtitle: "You'll be the first to know when we launch."
+          }
+        },
+        benefits: [
+          {
+            title: "Exclusive Access",
+            description: "First 1000 users get premium features free"
+          },
+          {
+            title: "Launch Bonuses",
+            description: "Special rewards for early adopters"
+          },
+          {
+            title: "Beta Testing",
+            description: "Help shape the future of hiring"
+          }
+        ],
+        trust: [
+          "No spam, ever",
+          "Exclusive updates only",
+          "Unsubscribe anytime"
+        ]
+      }
+    },
     landing: {
       // Hero Section
       hero: {
@@ -348,7 +423,7 @@ const resources = {
         betaBanner: {
           skillbridge: "SkillBridge",
           beta: "BETA",
-          message: "- Try now completely free!"
+          message: "- Get Early Access!"
         },
         logo: {
           alt: "SkillBridge Logo"
@@ -382,6 +457,81 @@ const resources = {
   },
   
   bg: {
+    preorder: {
+      hero: {
+        badge: "Наскоро - Получете Ранен Достъп",
+        title: {
+          part1: "Бъдещето на",
+          part2: "Наемането"
+        },
+        subtitle: "SkillBridge революционизира начина, по който компаниите намират таланти и как разработчиците показват своите умения. Бъдете сред първите, които ще изпитат платформата, която ще промени наемането завинаги.",
+        form: {
+          placeholder: "Въведете вашия имейл за ранен достъп",
+          button: "Получи Уведомление",
+          success: "Благодарим ви! Ще ви уведомим когато стартираме."
+        },
+        socialProof: "🚀 Присъединете се към 10,000+ професионалисти, които чакат стартирането • Без спам, само актуализации за стартирането"
+      },
+      howItWorks: {
+        badge: "Как Работи",
+        title: "Прост Процес, Революционни Резултати",
+        subtitle: "Нашата платформа оптимизира процеса на наемане чрез практически, реални оценки",
+        steps: [
+          {
+            title: "Компания Публикува Проект",
+            description: "Компаниите създават реални предизвикателства, персонализирани според техните нужди и технологичен стек"
+          },
+          {
+            title: "Разработчици Кодират",
+            description: "Талантливи разработчици работят върху практически проекти, които показват техните умения"
+          },
+          {
+            title: "AI Оценка",
+            description: "Нашето AI оценява качеството на кода, подхода за решаване на проблеми и техническите умения"
+          },
+          {
+            title: "Подробна Обратна Връзка",
+            description: "И двете страни получават изчерпателни прозрения и анализи на производителността"
+          },
+          {
+            title: "Перфектно Съвпадение",
+            description: "Компаниите се свързват с разработчици, които са доказали своите умения върху реални проекти"
+          }
+        ]
+      },
+      finalCTA: {
+        badge: "Стартираме Скоро - Не Пропускайте!",
+        title: "Присъединете се към Бъдещето на Наемането",
+        subtitle: "Бъдете сред първите, които ще изпитат SkillBridge когато стартираме. Получете изключителен ранен достъп и специални стартови бонуси.",
+        form: {
+          placeholder: "Въведете вашия имейл за уведомление",
+          button: "Получи Ранен Достъп",
+          success: {
+            title: "Добре дошли в бъдещето!",
+            subtitle: "Ще бъдете първите, които ще знаят когато стартираме."
+          }
+        },
+        benefits: [
+          {
+            title: "Изключителен Достъп",
+            description: "Първите 1000 потребителя получават премиум функции безплатно"
+          },
+          {
+            title: "Стартови Бонуси",
+            description: "Специални награди за ранните потребители"
+          },
+          {
+            title: "Бета Тестване",
+            description: "Помогнете да оформим бъдещето на наемането"
+          }
+        ],
+        trust: [
+          "Никой спам, никога",
+          "Само изключителни актуализации",
+          "Отписване по всяко време"
+        ]
+      }
+    },
     landing: {
       // Hero Section
       hero: {
@@ -724,7 +874,7 @@ const resources = {
         betaBanner: {
           skillbridge: "SkillBridge",
           beta: "БЕТА",
-          message: "- Опитайте сега напълно безплатно!"
+          message: "- Вземи ранен достъп!"
         },
         logo: {
           alt: "SkillBridge Лого"

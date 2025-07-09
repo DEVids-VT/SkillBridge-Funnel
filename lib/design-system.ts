@@ -199,5 +199,6 @@ export const effects = {
     primary: 'bg-gradient-to-r from-[#003566] to-[#001d3d]',
     accent: 'bg-gradient-to-r from-[#ffd60a] to-[#ffc300]',
     hero: 'bg-gradient-to-br from-[#000814] via-[#001d3d] to-[#000814]',
+    radial3d: 'bg-[radial-gradient(ellipse_at_center,_#000610_0%,_#000814_40%,_#001d3d_100%)]',
   }
 }; 

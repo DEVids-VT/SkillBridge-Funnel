@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useEffect, useRef, useState } from 'react';
 import { annotate } from 'rough-notation';
 import { VideoPlayer } from '@/components/ui/VideoPlayer';
-import { spacing, typography, buttons, effects, media } from '@/lib/design-system';
+import { spacing, typography, buttons, media } from '@/lib/design-system';
 import { Button } from '@/components/ui/button';
 
 export default function HeroSection() {
@@ -72,8 +72,9 @@ export default function HeroSection() {
             />
             <div className="relative z-10 w-full h-full">
               <VideoPlayer 
-                src="/videos/channel3.mp4"
+                src="/videos/channel.mp4"
                 className={media.video.player}
+                muted={false}
               />
             </div>
           </div>

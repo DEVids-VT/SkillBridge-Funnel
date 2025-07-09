@@ -2,7 +2,7 @@
 
 import { useTranslation } from 'react-i18next';
 import { spacing, typography, layouts, cards, components, animations, media } from '@/lib/design-system';
-import { Rocket, Star, Zap } from 'lucide-react';
+import { Rocket, Star } from 'lucide-react';
 
 export default function SolutionSection() {
   const { t } = useTranslation('landing');
@@ -21,7 +21,7 @@ export default function SolutionSection() {
 
         <div className={layouts.grid.features}>
           <div className="space-y-8">
-            {(t('solution.features', { returnObjects: true }) as any[]).map((feature, index) => (
+            {(t('solution.features', { returnObjects: true }) as Array<{title: string; description: string}>).map((feature, index) => (
               <div key={index} className={`${cards.glass} p-6 ${animations.hover.glow}`}>
                 <div className="flex items-start gap-4">
                   <div className={`w-12 h-12 bg-[#ffd60a] rounded-lg flex items-center justify-center flex-shrink-0`}>

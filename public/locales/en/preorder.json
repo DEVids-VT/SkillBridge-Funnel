@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Coming Soon - Get Early Access",
+    "title": {
+      "part1": "The Future of",
+      "part2": "Hiring"
+    },
+    "subtitle": "SkillBridge is revolutionizing how companies find talent and how developers showcase their skills. Be among the first to experience the platform that will change hiring forever.",
+    "form": {
+      "placeholder": "Enter your email for early access",
+      "button": "Get Notified",
+      "success": "Thank you! We'll notify you when we launch."
+    },
+    "socialProof": "🚀 Join 10,000+ professionals waiting for launch • No spam, just launch updates"
+  },
+  "howItWorks": {
+    "badge": "How It Works",
+    "title": "Simple Process, Revolutionary Results",
+    "subtitle": "Our platform streamlines the hiring process through practical, real-world assessments",
+    "steps": [
+      {
+        "title": "Company Posts Project",
+        "description": "Companies create real-world challenges tailored to their needs and tech stack"
+      },
+      {
+        "title": "Developers Code",
+        "description": "Talented developers work on practical projects that showcase their skills"
+      },
+      {
+        "title": "AI Assessment",
+        "description": "Our AI evaluates code quality, problem-solving approach, and technical skills"
+      },
+      {
+        "title": "Detailed Feedback",
+        "description": "Both parties receive comprehensive insights and performance analytics"
+      },
+      {
+        "title": "Perfect Match",
+        "description": "Companies connect with developers who have proven their skills on real projects"
+      }
+    ]
+  },
+  "finalCTA": {
+    "badge": "Launching Soon - Don't Miss Out!",
+    "title": "Join the Future of Hiring",
+    "subtitle": "Be among the first to experience SkillBridge when we launch. Get exclusive early access and special launch benefits.",
+    "form": {
+      "placeholder": "Enter your email to get notified",
+      "button": "Get Early Access",
+      "success": {
+        "title": "Welcome to the future!",
+        "subtitle": "You'll be the first to know when we launch."
+      }
+    },
+    "benefits": [
+      {
+        "title": "Exclusive Access",
+        "description": "First 1000 users get premium features free"
+      },
+      {
+        "title": "Launch Bonuses",
+        "description": "Special rewards for early adopters"
+      },
+      {
+        "title": "Beta Testing",
+        "description": "Help shape the future of hiring"
+      }
+    ],
+    "trust": [
+      "No spam, ever",
+      "Exclusive updates only",
+      "Unsubscribe anytime"
+    ]
+  }
+} 

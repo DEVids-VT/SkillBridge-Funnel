@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
         </div>
 
         <div className={layouts.grid.cards3}>
-          {(t('testimonials.items', { returnObjects: true }) as any[]).map((testimonial, index) => (
+          {(t('testimonials.items', { returnObjects: true }) as Array<{quote: string; author: string; role: string; company: string}>).map((testimonial, index) => (
             <div key={index} className={`${cards.testimonial} ${animations.hover.glow}`}>
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
@@ -28,7 +28,7 @@ export default function TestimonialsSection() {
                 ))}
               </div>
               <blockquote className={`${typography.body.default} italic mb-6`}>
-                "{testimonial.quote}"
+                &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
               <div className="flex items-center gap-4">
                 {/* 

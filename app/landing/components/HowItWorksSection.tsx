@@ -1,14 +1,14 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { spacing, typography, layouts, cards, components, animations, media } from '@/lib/design-system';
+import { spacing, typography, layouts, cards, components, animations, media, effects } from '@/lib/design-system';
 import { Play, ArrowRight } from 'lucide-react';
 
 export default function HowItWorksSection() {
   const { t } = useTranslation('landing');
 
   return (
-    <section className={`relative ${spacing.section} bg-[#001d3d]`}>
+    <section className={`relative ${spacing.section} ${effects.gradients.radial3d}`}>
       <div className={spacing.container}>
         <div className={layouts.sectionHeader}>
           <div className={`${components.badge} ${components.badgeColors.glass} mb-6`}>
@@ -45,7 +45,7 @@ export default function HowItWorksSection() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {(t('howItWorks.steps', { returnObjects: true }) as any[]).map((step, index) => (
+            {(t('howItWorks.steps', { returnObjects: true }) as Array<{step: string; title: string; description: string}>).map((step, index) => (
               <div key={index} className={`${cards.glass} p-6 text-center ${animations.hover.lift}`}>
                 <div className="w-16 h-16 bg-[#ffd60a] rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-[#000814] font-bold text-xl">{step.step}</span>

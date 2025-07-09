@@ -22,7 +22,7 @@ export default function FAQSection() {
         </div>
 
         <div className="max-w-3xl mx-auto space-y-4">
-          {(t('faq.items', { returnObjects: true }) as any[]).map((item, index) => (
+          {(t('faq.items', { returnObjects: true }) as Array<{question: string; answer: string}>).map((item, index) => (
             <div key={index} className={`${cards.glass} overflow-hidden`}>
               <button
                 onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
