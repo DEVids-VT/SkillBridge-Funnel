@@ -1,10 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { spacing, buttons } from '@/lib/design-system';
-import { CheckCircle, Mail, Bell, Rocket, Users, Star, Zap, AlertCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { CheckCircle, Rocket, Users, Star, Zap } from 'lucide-react';
 
 export default function FinalCTASection() {
   const { t, ready } = useTranslation('preorder');

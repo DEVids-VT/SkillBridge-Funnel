@@ -5,8 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { annotate } from 'rough-notation';
 import { VideoPlayer } from '@/components/ui/VideoPlayer';
 import { spacing, buttons } from '@/lib/design-system';
-import { Button } from '@/components/ui/button';
-import { Mail, Bell, Zap, CheckCircle, AlertCircle } from 'lucide-react';
+import { Zap } from 'lucide-react';
 
 export default function HeroSection() {
   const { t, ready } = useTranslation('preorder');

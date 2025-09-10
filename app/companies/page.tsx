@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { companiesData } from './companiesData';
-import { layouts, typography, spacing } from '@/lib/design-system';
+import { layouts, spacing } from '@/lib/design-system';
 import { createMetadata } from "@/lib/seo/metadata";
 
 export const metadata = createMetadata({

@@ -29,7 +29,7 @@ export default function ContactPage() {
                 {/* Fallback message for loading issues */}
                 <div className="text-center mt-6 max-w-md mx-auto">
           <p className="text-sm text-gray-400 mb-2">
-            Don't see the scheduling widget below?
+            Don&apos;t see the scheduling widget above?
           </p>
           <p className="text-xs text-gray-500">
             Try refreshing the page or visit{' '}

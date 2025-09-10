@@ -78,7 +78,7 @@ export default function AboutPage() {
               </div>
 
               <div className={`${cards.base} p-6 md:p-8`}>
-                <h3 className={`${typography.heading[4]} mb-4 text-[#ffd60a]`}>The Hidden Costs Don't Stop There</h3>
+                <h3 className={`${typography.heading[4]} mb-4 text-[#ffd60a]`}>The Hidden Costs Don&apos;t Stop There</h3>
                 <ul className="space-y-3 text-gray-200">
                   <li className="flex items-start gap-3">
                     <span className="text-[#ffd60a] mt-1">•</span>
@@ -120,7 +120,7 @@ export default function AboutPage() {
                   <h3 className={`${typography.heading[4]} mb-3`}>You Provide Two Simple Inputs</h3>
                   <p className={typography.body.lg}>
                     Just give us your <strong>job description</strong> and describe your <strong>ideal candidate profile</strong>. 
-                    That's it—no more hours spent crafting test scenarios.
+                    That&apos;s it—no more hours spent crafting test scenarios.
                   </p>
                 </div>
               </div>
@@ -179,7 +179,7 @@ export default function AboutPage() {
               <div className={cards.feature}>
                 <h3 className={`${typography.heading[4]} mb-3`}>Your Existing Candidates</h3>
                 <p className={typography.body.default}>
-                  Already have applicants? Send them directly to SkillBridge. They'll complete assessments in their dedicated profiles 
+                  Already have applicants? Send them directly to SkillBridge. They&apos;ll complete assessments in their dedicated profiles 
                   while you get comprehensive analysis without any manual work.
                 </p>
               </div>
