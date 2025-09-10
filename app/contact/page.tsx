@@ -34,7 +34,7 @@ export default function ContactPage() {
           <p className="text-xs text-gray-500">
             Try refreshing the page or visit{' '}
             <a 
-              href="https://calendly.com/davidpetkov/15-minute-demo" 
+              href="https://calendly.com/davidpetkov/30min" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-[#ffd60a] hover:text-[#ffc300] underline"
@@ -47,7 +47,7 @@ export default function ContactPage() {
         {/* Calendly inline widget begin */}
         <div
           className="calendly-inline-widget"
-          data-url="https://calendly.com/davidpetkov/15-minute-demo"
+          data-url="https://calendly.com/davidpetkov/30min"
           style={{ minWidth: "320px", height: "700px" }}
         />
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
