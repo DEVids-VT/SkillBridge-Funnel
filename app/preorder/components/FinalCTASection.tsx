@@ -8,48 +8,7 @@ import { Button } from '@/components/ui/button';
 
 export default function FinalCTASection() {
   const { t, ready } = useTranslation('preorder');
-  const [email, setEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
-  const handleEmailSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to subscribe');
-      }
-
-      setIsSubmitted(true);
-      setEmail('');
-      
-      // Reset success state after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-
-    } catch (error) {
-      console.error('Email submission error:', error);
-      setError(error instanceof Error ? error.message : 'Something went wrong');
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const benefits = [
     {
@@ -102,73 +61,36 @@ export default function FinalCTASection() {
           {/* Mobile-optimized Launch countdown badge */}
           <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#ffd60a] text-[#000814] text-xs sm:text-sm font-bold mb-6 sm:mb-8 animate-bounce">
             <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-center">{t('finalCTA.badge')}</span>
+            <span className="text-center">Ready to launch - Book your demo!</span>
           </div>
           
           <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 sm:mb-6">
-            {t('finalCTA.title')}
+            Ready to Stop Wasting Expert Time?
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed mb-6 sm:mb-8">
-            {t('finalCTA.subtitle')}
+            See how SkillBridge automates candidate testing and saves your company thousands in hiring costs
           </p>
           
-          {/* Mobile-optimized Email Collection Form */}
-          {!isSubmitted ? (
-            <form onSubmit={handleEmailSubmit} className="max-w-lg mx-auto mb-8 sm:mb-10">
-              <div className="flex flex-col gap-4">
-                <div className="relative">
-                  <Mail className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder={t('finalCTA.form.placeholder')}
-                    className="w-full pl-10 sm:pl-12 pr-4 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#ffd60a] focus:ring-2 focus:ring-[#ffd60a]/20 transition-all duration-300 text-sm sm:text-base"
-                    required
-                    disabled={isLoading}
-                  />
-                </div>
-
-                {error && (
-                  <div className="flex items-center justify-center gap-2 p-3 bg-red-500/20 border border-red-500/30 rounded-xl">
-                    <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0" />
-                    <span className="text-red-400 text-sm text-center">{error}</span>
-                  </div>
-                )}
-
-                <Button
-                  type="submit"
-                  disabled={isLoading || !email}
-                  className={`${buttons.primary} font-playfair px-6 sm:px-8 h-12 sm:h-[56px] text-base sm:text-lg rounded-xl w-full ${
-                    isLoading ? 'opacity-70 cursor-not-allowed' : ''
-                  }`}
-                  style={{ boxShadow: '0 8px 32px 0 rgba(255, 214, 10, 0.3)' }}
-                >
-                  {isLoading ? (
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 border-2 border-[#000814] border-t-transparent rounded-full animate-spin" />
-                      <span>Subscribing...</span>
-                    </div>
-                  ) : (
-                    <>
-                      <Bell className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      {t('finalCTA.form.button')}
-                    </>
-                  )}
-                </Button>
-              </div>
-            </form>
-          ) : (
-            <div className="max-w-lg mx-auto mb-8 sm:mb-10">
-              <div className="flex items-center justify-center gap-3 p-4 sm:p-6 bg-green-500/20 border-2 border-green-500/30 rounded-xl">
-                <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-400 flex-shrink-0" />
-                <div className="text-center">
-                  <p className="text-green-400 font-bold text-base sm:text-lg">{t('finalCTA.form.success.title')}</p>
-                  <p className="text-green-400/80 text-sm">{t('finalCTA.form.success.subtitle')}</p>
+          {/* Demo CTA */}
+          <div className="max-w-lg mx-auto mb-8 sm:mb-10 text-center">
+            <a
+              href="/contact"
+              className={`${buttons.primary} font-playfair px-6 sm:px-8 h-12 sm:h-[56px] text-base sm:text-lg rounded-xl inline-flex items-center justify-center transition-all duration-300 hover:scale-105`}
+              style={{ boxShadow: '0 8px 32px 0 rgba(255, 214, 10, 0.3)' }}
+            >
+              <Rocket className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              Book a free demo
+            </a>
+            <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-center text-gray-400 mt-3">
+              <span>And get 1 month free</span>
+              <div className="relative group">
+                <span className="w-3 h-3 bg-gray-600 text-white rounded-full flex items-center justify-center text-xs cursor-help">?</span>
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-10">
+                  The demo is 100% free. Then you can claim 1 month free use of SkillBridge. Only pay for LLM token usage (typically up to $3 per scenario).
                 </div>
               </div>
             </div>
-          )}
+          </div>
 
           {/* Mobile-optimized Benefits Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10">
@@ -188,14 +110,20 @@ export default function FinalCTASection() {
             })}
           </div>
 
-          {/* Mobile-optimized Trust indicators */}
+          {/* Trust indicators */}
           <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-300">
-            {(t('finalCTA.trust', { returnObjects: true }) as string[]).map((trust: string, index: number) => (
-              <span key={index} className="flex items-center justify-center gap-2">
-                <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-[#ffd60a] flex-shrink-0" />
-                <span className="text-center">{trust}</span>
-              </span>
-            ))}
+            <span className="flex items-center justify-center gap-2">
+              <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-[#ffd60a] flex-shrink-0" />
+              <span className="text-center">No credit card required</span>
+            </span>
+            <span className="flex items-center justify-center gap-2">
+              <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-[#ffd60a] flex-shrink-0" />
+              <span className="text-center">15-minute demo</span>
+            </span>
+            <span className="flex items-center justify-center gap-2">
+              <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-[#ffd60a] flex-shrink-0" />
+              <span className="text-center">Save 75% on hiring time</span>
+            </span>
           </div>
         </div>
       </div>

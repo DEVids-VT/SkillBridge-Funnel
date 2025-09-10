@@ -15,7 +15,7 @@ export default function SolutionSection() {
             <Rocket className={components.icon.sm} />
             <span>{t('solution.badge')}</span>
           </div>
-          <h2 className={`${layouts.sectionTitle} font-playfair`}>{t('solution.title')}</h2>
+          <h2 className={layouts.sectionTitle}>{t('solution.title')}</h2>
           <p className={layouts.sectionSubtitle}>{t('solution.subtitle')}</p>
         </div>
 

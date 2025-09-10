@@ -16,7 +16,7 @@ export default function PricingSection() {
             <Award className={components.icon.sm} />
             <span>{t('pricing.badge')}</span>
           </div>
-          <h2 className={`${layouts.sectionTitle} font-playfair`}>{t('pricing.title')}</h2>
+          <h2 className={layouts.sectionTitle}>{t('pricing.title')}</h2>
           <p className={layouts.sectionSubtitle}>{t('pricing.subtitle')}</p>
         </div>
 

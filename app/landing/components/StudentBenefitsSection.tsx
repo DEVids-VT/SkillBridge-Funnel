@@ -34,7 +34,7 @@ export default function StudentBenefitsSection() {
             <GraduationCap className={components.icon.sm} />
             <span>{t('students.badge')}</span>
           </div>
-          <h2 className={`${layouts.sectionTitle} font-playfair`}>{t('students.title')}</h2>
+          <h2 className={layouts.sectionTitle}>{t('students.title')}</h2>
           <p className={layouts.sectionSubtitle}>{t('students.subtitle')}</p>
         </div>
 

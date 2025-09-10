@@ -15,7 +15,7 @@ export default function HowItWorksSection() {
             <Play className={components.icon.sm} />
             <span>{t('howItWorks.badge')}</span>
           </div>
-          <h2 className={`${layouts.sectionTitle} font-playfair`}>{t('howItWorks.title')}</h2>
+          <h2 className={layouts.sectionTitle}>{t('howItWorks.title')}</h2>
           <p className={layouts.sectionSubtitle}>{t('howItWorks.subtitle')}</p>
         </div>
 

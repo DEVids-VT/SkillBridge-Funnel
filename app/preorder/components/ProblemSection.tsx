@@ -14,7 +14,7 @@ export default function ProblemSection() {
           <div className={`${components.badge} ${components.badgeColors.glass} mb-6`}>
             <span>{t('problem.badge')}</span>
           </div>
-          <h2 className={`${layouts.sectionTitle} font-playfair`}>{t('problem.title')}</h2>
+          <h2 className={layouts.sectionTitle}>{t('problem.title')}</h2>
           <p className={layouts.sectionSubtitle}>{t('problem.subtitle')}</p>
         </div>
 

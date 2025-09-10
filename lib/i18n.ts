@@ -430,7 +430,7 @@ const resources = {
         },
         navigation: {
           projects: "Projects",
-          partners: "Companies", 
+          partners: "Partners", 
           about: "About SkillBridge",
           toggleMenu: "Toggle menu"
         },
@@ -881,7 +881,7 @@ const resources = {
         },
         navigation: {
           projects: "Проекти",
-          partners: "Компании",
+          partners: "Партньори",
           about: "За SkillBridge",
           toggleMenu: "Превключи меню"
         },

@@ -46,6 +46,15 @@ export const typography = {
     5: 'text-lg md:text-xl font-semibold text-white',
     6: 'text-base md:text-lg font-semibold text-white',
   },
+  // Elegant titles using Playfair Display
+  title: {
+    1: 'font-playfair text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]',
+    2: 'font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight',
+    3: 'font-playfair text-2xl md:text-3xl font-bold text-white',
+    4: 'font-playfair text-xl md:text-2xl font-bold text-white',
+    5: 'font-playfair text-lg md:text-xl font-semibold text-white',
+    6: 'font-playfair text-base md:text-lg font-semibold text-white',
+  },
   body: {
     default: 'text-base text-gray-200 leading-relaxed',
     lg: 'text-lg text-gray-200 leading-relaxed',
@@ -66,10 +75,10 @@ export const layouts = {
   pageHeader: 'text-center mb-16 relative',
   pageHeaderBackground:
     'absolute -top-10 left-0 right-0 h-20 bg-gradient-to-r from-[#001d3d] to-[#003566] rounded-b-3xl -z-10',
-  pageTitle: `${typography.heading[1]} mb-6`,
+  pageTitle: `${typography.title[1]} mb-6`,
   pageDescription: 'text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed',
   sectionHeader: 'text-center mb-12 md:mb-16',
-  sectionTitle: `${typography.heading[2]} mb-4`,
+  sectionTitle: `${typography.title[2]} mb-4`,
   sectionSubtitle: 'text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed',
   grid: {
     cards2: 'grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8',

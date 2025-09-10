@@ -22,7 +22,6 @@ export function Header() {
 
   // Define navigation items to match SkillBridge SPA
   const navItems = [
-    { to: '/projects', label: ready ? t('headerComponent.navigation.projects') : 'Projects' },
     { to: '/companies', label: ready ? t('headerComponent.navigation.partners') : 'Partners' },
     { to: '/about', label: ready ? t('headerComponent.navigation.about') : 'About SkillBridge' },
   ];

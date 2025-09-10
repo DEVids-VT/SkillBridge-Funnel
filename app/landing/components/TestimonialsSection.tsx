@@ -15,7 +15,7 @@ export default function TestimonialsSection() {
             <Star className={components.icon.sm} />
             <span>{t('testimonials.badge')}</span>
           </div>
-          <h2 className={`${layouts.sectionTitle} font-playfair`}>{t('testimonials.title')}</h2>
+          <h2 className={layouts.sectionTitle}>{t('testimonials.title')}</h2>
           <p className={layouts.sectionSubtitle}>{t('testimonials.subtitle')}</p>
         </div>
 

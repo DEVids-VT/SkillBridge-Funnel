@@ -17,7 +17,7 @@ export default function FAQSection() {
             <MessageCircle className={components.icon.sm} />
             <span>{t('faq.badge')}</span>
           </div>
-          <h2 className={`${layouts.sectionTitle} font-playfair`}>{t('faq.title')}</h2>
+          <h2 className={layouts.sectionTitle}>{t('faq.title')}</h2>
           <p className={layouts.sectionSubtitle}>{t('faq.subtitle')}</p>
         </div>
 

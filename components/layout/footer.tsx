@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function Footer() {
@@ -10,9 +10,8 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: ready ? t('layoutPage.footer.socialLinks.github') : 'GitHub', icon: Github, href: '#' },
-    { name: ready ? t('layoutPage.footer.socialLinks.linkedin') : 'LinkedIn', icon: Linkedin, href: '#' },
-    { name: ready ? t('layoutPage.footer.socialLinks.twitter') : 'Twitter', icon: Twitter, href: '#' },
+    { name: ready ? t('layoutPage.footer.socialLinks.github') : 'GitHub', icon: Github, href: 'https://github.com/DEVids-VT' },
+    { name: ready ? t('layoutPage.footer.socialLinks.linkedin') : 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/devids/' },
   ];
 
   return (

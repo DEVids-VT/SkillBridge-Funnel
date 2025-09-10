@@ -1,3 +1,7 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { companiesData } from './companiesData';
+import { layouts, typography, spacing } from '@/lib/design-system';
 import { createMetadata } from "@/lib/seo/metadata";
 
 export const metadata = createMetadata({
@@ -9,15 +13,35 @@ export const metadata = createMetadata({
 export default function CompaniesPage() {
   return (
     <div className="min-h-screen bg-[#000814] text-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl font-bold mb-6">Partner Companies</h1>
-          <p className="text-xl text-gray-300 mb-8">
-            Meet our partner companies and discover amazing opportunities to grow your career.
+      <div className={`${spacing.container} ${spacing.headerOffset}`}>
+        <div className={layouts.pageHeader}>
+          <div className={layouts.pageHeaderBackground} />
+          <h1 className={layouts.pageTitle}>Our Partners</h1>
+          <p className={layouts.pageDescription}>
+            Meet our trusted partner companies and explore opportunities for your career growth.
           </p>
-          <div className="text-gray-400">
-            This page is coming soon as part of the SkillBridge platform.
-          </div>
+        </div>
+
+        {/* Company Logos Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
+          {companiesData.map((company) => (
+            <Link
+              key={company.id}
+              href={company.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <div className="relative aspect-square bg-[#003566]/80 rounded-xl border-2 border-[#003566] hover:border-[#ffd60a] transition-all duration-300 hover:scale-105 overflow-hidden">
+                <Image
+                  src={company.logo}
+                  alt={`${company.name} logo`}
+                  fill
+                  className="object-contain p-4 group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

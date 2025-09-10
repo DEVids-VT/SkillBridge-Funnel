@@ -33,7 +33,7 @@ export default function CompanyBenefitsSection() {
             <Users className={components.icon.sm} />
             <span>{t('companies.badge')}</span>
           </div>
-          <h2 className={`${layouts.sectionTitle} font-playfair`}>{t('companies.title')}</h2>
+          <h2 className={layouts.sectionTitle}>{t('companies.title')}</h2>
           <p className={layouts.sectionSubtitle}>{t('companies.subtitle')}</p>
         </div>
 

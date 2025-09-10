@@ -12,10 +12,6 @@ export default function HeroSection() {
   const { t, ready } = useTranslation('preorder');
   const titleRef = useRef<HTMLSpanElement>(null);
   const [isClient, setIsClient] = useState(false);
-  const [email, setEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -40,43 +36,6 @@ export default function HeroSection() {
     }
   }, [isClient, ready]);
 
-  const handleEmailSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to subscribe');
-      }
-
-      setIsSubmitted(true);
-      setEmail('');
-      
-      // Reset success state after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-
-    } catch (error) {
-      console.error('Email submission error:', error);
-      setError(error instanceof Error ? error.message : 'Something went wrong');
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   if (!isClient || !ready) {
     return (
@@ -125,65 +84,26 @@ export default function HeroSection() {
             </div>
           </div>
           
-          {/* Mobile-optimized Email Collection */}
+          {/* Demo CTA */}
           <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 px-4">
-            {!isSubmitted ? (
-              <form onSubmit={handleEmailSubmit} className="w-full max-w-md mx-auto">
-                <div className="flex flex-col gap-4">
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder={t('hero.form.placeholder')}
-                      className="w-full pl-10 sm:pl-12 pr-4 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#ffd60a] focus:ring-2 focus:ring-[#ffd60a]/20 transition-all duration-300 text-sm sm:text-base"
-                      required
-                      disabled={isLoading}
-                    />
-                  </div>
-                  
-                  {error && (
-                    <div className="flex items-center justify-center gap-2 p-3 bg-red-500/20 border border-red-500/30 rounded-xl">
-                      <AlertCircle className="w-4 h-4 text-red-400 flex-shrink-0" />
-                      <span className="text-red-400 text-sm text-center">{error}</span>
-                    </div>
-                  )}
-                  
-                  <Button
-                    type="submit"
-                    disabled={isLoading || !email}
-                    className={`${buttons.primary} font-playfair px-6 sm:px-8 h-12 sm:h-[56px] text-base sm:text-lg rounded-xl w-full sm:w-auto ${
-                      isLoading ? 'opacity-70 cursor-not-allowed' : ''
-                    }`}
-                    style={{ boxShadow: '0 8px 32px 0 rgba(0,24,61,0.18)' }}
-                  >
-                    {isLoading ? (
-                      <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 border-2 border-[#000814] border-t-transparent rounded-full animate-spin" />
-                        <span>Subscribing...</span>
-                      </div>
-                    ) : (
-                      <>
-                        <Bell className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                        {t('hero.form.button')}
-                      </>
-                    )}
-                  </Button>
-                </div>
-              </form>
-            ) : (
-              <div className="w-full max-w-md mx-auto">
-                <div className="flex items-center justify-center gap-3 p-4 bg-green-500/20 border border-green-500/30 rounded-xl">
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-400 flex-shrink-0" />
-                  <span className="text-green-400 font-medium text-sm sm:text-base text-center">{t('hero.form.success')}</span>
+            <a
+              href="/contact"
+              className={`${buttons.primary} font-playfair px-6 sm:px-8 h-12 sm:h-[56px] text-base sm:text-lg rounded-xl inline-flex items-center justify-center transition-all duration-300 hover:scale-105`}
+              style={{ boxShadow: '0 8px 32px 0 rgba(0,24,61,0.18)' }}
+            >
+              <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              Book a free demo
+            </a>
+            
+            <div className="flex items-center justify-center gap-2 text-xs sm:text-sm max-w-sm text-center text-gray-400 px-2">
+              <span>And get 1 month free</span>
+              <div className="relative group">
+                <span className="w-3 h-3 bg-gray-600 text-white rounded-full flex items-center justify-center text-xs cursor-help">?</span>
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-800 text-white text-xs rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-10">
+                  The demo is 100% free. Then you can claim 1 month free use of SkillBridge. Only pay for LLM token usage (typically up to $3 per scenario).
                 </div>
               </div>
-            )}
-            
-            <p className="text-xs sm:text-sm max-w-sm text-center text-gray-400 px-2">
-              {t('hero.socialProof')}
-            </p>
+            </div>
           </div>
         </div>
       </div>
